@@ -1,0 +1,11 @@
+ALTER TABLE "Products"
+ALTER COLUMN "ID"
+SET NOT NULL;
+
+ALTER TABLE "Products"
+ADD CONSTRAINT "PK_Products"
+PRIMARY KEY ("ID");
+
+ALTER TABLE "Products"
+ADD CONSTRAINT "U_Products"
+UNIQUE ("Name");
