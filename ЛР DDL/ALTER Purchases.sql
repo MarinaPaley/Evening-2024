@@ -34,3 +34,6 @@ CHECK ("Amount" > 0);
 ALTER TABLE "Purchases"
 ALTER COLUMN "Date"
 SET DEFAULT current_date;
+
+ALTER TABLE "Purchases"
+ADD COLUMN "Amount" INT;
