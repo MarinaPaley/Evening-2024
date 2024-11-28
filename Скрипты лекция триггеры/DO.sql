@@ -2,11 +2,12 @@ DO
 $$
 DECLARE 
     message TEXT;
+	Id INTEGER;
 BEGIN
-   --CALL public."pMakeStoreWithFunctions"('Молоко', 'Петров', 10, 100);
+    --CALL public."pMakeStoreWithFunctions"('Молоко', 'Петров', 10, 100);
 	--CALL public."pCheckEntityName"('', 'продукта');
 	--CALL public."pCheckAboveZero"(-10.00, 'количество');
-   CALL public."pMakePurshasesWithFunctions"('Молоко', 'Петров', 10, 100);
+	CALL public."pMakePurshasesWithFunctions"('Молоко', 'Петров', 15, 100);
 EXCEPTION
     WHEN OTHERS
     THEN

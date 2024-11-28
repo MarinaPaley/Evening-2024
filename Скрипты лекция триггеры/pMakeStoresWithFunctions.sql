@@ -12,6 +12,7 @@ DECLARE
 	id_vendor INTEGER;
 	id INTEGER;
 	total_amount INTEGER;
+	message TEXT;
 BEGIN
 	CALL public."pCheckEntityName"(product, 'продукта');
 	CALL public."pCheckEntityName"(vendor, 'поставщика');
@@ -19,18 +20,12 @@ BEGIN
 	CALL public."pCheckAboveZero"(price, 'цена');
 
 	SELECT * INTO id_product FROM public."fGetProductID"(product);
-	
-	IF id_product IS NULL
-	THEN
-		RAISE EXCEPTION 'Не найден продукт %', product;
-	END IF;
+	message = 'Не найден продукт ' || product;
+	CALL public."pCheckID"(id_product, message);
 
 	SELECT * INTO id_vendor FROM public."fGetVendorID"(vendor);
-	
-	IF id_vendor IS NULL
-	THEN
-		RAISE EXCEPTION 'Не найден поставщик %', vendor;
-	END IF;
+	message = 'Не найден поставщик ' || vendor;
+	CALL public."pCheckID"(id_vendor, message);
 
 	SELECT * INTO id FROM public."fGetNextStoreID"();
 

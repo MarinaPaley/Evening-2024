@@ -11,4 +11,4 @@ $$
 	WHERE i."ID_Product" = id_product AND i."ID_Vendor" = id_vendor;
 $$ LANGUAGE SQL;
 
-SELECT * FROM public."fGetItemAmount"(3, 2, 1);
+--SELECT * FROM public."fGetItemAmount"(3, 2, 1);

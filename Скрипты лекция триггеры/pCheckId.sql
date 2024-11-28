@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE public."pCheckID"(
+	  Id INTEGER 
+	, message VARCHAR(50) )
+LANGUAGE plpgsql
+AS
+$$
+BEGIN
+	IF id IS NULL
+	THEN
+		RAISE EXCEPTION '%', message;
+	END IF;
+END;
+$$
