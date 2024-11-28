@@ -31,12 +31,7 @@ BEGIN
 	message = 'Не найден товар ' || product || ' у поставщика ' || vendor;
 	CALL public."pCheckID"(id, message);
 
-	SELECT * INTO total_amount
-	FROM public."fGetItemAmount"(id_product, id_vendor, amount);
-	IF total_amount < amount
-	THEN
-		RAISE EXCEPTION 'Количество товара % меньше заданного %', total_amount, amount;
-	END IF;
+	CALL public."pCheckAmount"(id_product, id_vendor, amount);
 
 	SELECT * INTO id FROM public."fGetNextPurchasesID"();
 

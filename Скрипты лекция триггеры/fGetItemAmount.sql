@@ -6,7 +6,7 @@ CREATE OR REPLACE FUNCTION public."fGetItemAmount"(
 RETURNS INTEGER
 AS
 $$
-	SELECT SUM(i."Amount") + amount
+	SELECT i."Amount" + amount
 	FROM public."Items" i
 	WHERE i."ID_Product" = id_product AND i."ID_Vendor" = id_vendor;
 $$ LANGUAGE SQL;

@@ -6,3 +6,6 @@ BEGIN
     RAISE EXCEPTION 'Запрещено удалять таблицу : % ', tg_tag;
 END;
 $$;
+
+
+DROP TABLE "Items"  
