@@ -1,5 +1,7 @@
 --DROP FUNCTION public."fGetItemID"
-CREATE OR REPLACE FUNCTION public."fGetItemID"(id_product INTEGER, id_vendor INTEGER)
+CREATE OR REPLACE FUNCTION public."fGetItemID"(
+	id_product INTEGER
+  , id_vendor INTEGER)
 RETURNS INTEGER
 AS
 $$
